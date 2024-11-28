@@ -1,0 +1,4 @@
+Walcarius;Stijn;100
+Dewitte;Marie;25.5
+Berthier;Frederiek;360
+Claerhout;Joerie;2
