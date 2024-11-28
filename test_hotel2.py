@@ -1,6 +1,6 @@
 from model.Hotel import Hotel
 from model.Hotelguest import Hotelguest
-from model.HotelRepository import HotelRepository
+from model.hotelrepository import HotelRepository
 
 # Create a hotel instance
 hotel_howest = Hotel("Howest")

@@ -1,5 +1,5 @@
 class Hotelguest:
-    def __init__(self, parlastname: str, parfirstname: str, parbalance: int = 0, par_checked_in: bool = True) -> None:
+    def __init__(self, parlastname: str, parfirstname: str, parbalance: float = 0.0, par_checked_in: bool = True) -> None:
         self.lastname = parlastname
         self.firstname = parfirstname
         self.balance = parbalance
@@ -31,15 +31,15 @@ class Hotelguest:
 
     # ********** property balance - (setter/getter) ***********
     @property
-    def balance(self) -> int:
+    def balance(self) -> float:
         return self.__balance
 
     @balance.setter
     def balance(self, value: float) -> None:
-        if isinstance(value, float) and value >= 0:
-            self.__balance = value
+        if isinstance(value, (int, float)) and value >= 0:
+            self.__balance = float(value)  # Ensure it is always a float
         else:
-            self.__balance = 0
+            self.__balance = 0.0
 
     # ********** property is_checked_in - (setter/getter) ***********
     @property
@@ -56,6 +56,6 @@ class Hotelguest:
     # ********** String Representation ***********
     def __str__(self) -> str:
         if self.is_checked_in:
-            return f"Hotelguest: {self.firstname} {self.lastname} - Checked in: {self.is_checked_in} (balance {self.balance} euro)"
+            return f"Hotelguest: {self.firstname} {self.lastname} - Checked in: {self.is_checked_in} (balance {self.balance:.2f} euro)"
         else:
             return f"X: {self.firstname} {self.lastname.upper()}"
